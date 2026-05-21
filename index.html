@@ -114,7 +114,7 @@
                               <!-- Venue line: conference in black, Oral in red -->
           <div class="publication-authors" style="margin-top: 0.8rem; font-size: 1.4rem;">
             <span style="color: #222; font-weight: 900;">
-              IEEE Intelligent Vehicles Symposium 2026
+              IEEE IV 2026
             </span>
             <strong style="color: #ee1111; margin-left: 0.3rem;">
               (Oral) 
@@ -231,8 +231,7 @@
                style="width:100%;">
           <p style="font-size:0.9rem; color:#888; margin-top:0.5rem;">
             Figure 2: Ground truth, predicted BEV segmentation, and corresponding epistemic
-            and aleatoric uncertainty maps. High uncertainty localizes correctly at object
-            boundaries and occluded regions.
+            and aleatoric uncertainty maps. 
           </p>
         </div>
 
@@ -254,20 +253,23 @@
                alt="Uncertainty under varying compression rates"
                style="width:100%;">
           <p style="font-size:0.9rem; color:#888; margin-top:0.5rem;">
-            Figure 3: As compression rate (CPR) increases (0→64), segmentation quality degrades.
-            Hyper-V2X uncertainty maps reliably capture this degradation with progressively higher
-            epistemic and aleatoric uncertainty in vulnerable regions.
+            Figure 3: Uncertainty estimation under varying compression rates. As CPR increases (0→64), segmentation quality degrades (red circles).
+            Our method produces uncertainty maps that effectively capture this degradation, with progressively higher epistemic and aleatoric uncertainty
+            in vulnerable regions, demonstrating reliable uncertainty estimation under communication constraints
           </p>
         </div>
 
         <div class="content has-text-justified" style="margin-top: 1rem;">
           <p>
-            As communication bandwidth is reduced, objects that are accurately detected at full
-            resolution gradually deteriorate until they are no longer detected. Critically,
-            our uncertainty maps capture this degradation — exhibiting progressively higher
-            epistemic and aleatoric uncertainty as compression increases. This demonstrates
-            that Hyper-V2X provides reliable uncertainty estimates under the communication
-            constraints inherent to real V2X deployments.
+            As the compression rate (CPR) increases from 0 to 64, we observe progressive degradation in segmentation performance. Specific objects that are accurately detected
+            at compression rate 0 (highlighted in red circles) gradually deteriorate as communication bandwidth is reduced, until they are no longer detected at compression rate 64. 
+            Critically, our uncertainty maps effectively capture this degradation regions (highlighted in white circles) and exhibits progressively higher epistemic and aleatoric uncertainty as compression increases.
+
+            Such uncertainty-aware predictions are particularly valuable in
+            cooperative perception systems, where bandwidth limitations
+            and communication losses are inherent challenges, enabling
+            downstream tasks to appropriately weight or discard unreliable
+            predictions.
           </p>
         </div>
 
@@ -285,10 +287,11 @@
   author    = {Jagtap, Abhishek Dinkar and Tiptur Sadashivaiah, Sanath and Festag, Andreas},
   title     = {Hyper-V2X: Hypernetworks for Estimating Epistemic and Aleatoric Uncertainty
                in Cooperative Bird's-Eye-View Semantic Segmentation},
-  booktitle = {IEEE Intelligent Vehicles Symposium (IV)},
+  archivePrefix = {Accepted to IEEE Intelligent Vehicles Symposium (IV)},
   year      = {2026},
   note      = {Oral presentation},
   url       = {https://arxiv.org/abs/2605.21309v1}
+  DOI       = {TODO}
 }</code></pre>
   </div>
 </section>
@@ -309,13 +312,7 @@
       <div class="column is-8">
         <div class="content">
           <p>
-            This website is licensed under a <a rel="license"
-              href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-          <p>
-            Website template from <a href="https://nerfies.github.io">Nerfies</a>.
-            Please remember to remove the Google Analytics code if you do not want tracking.
+            Website template is borrowed from <a href="https://nerfies.github.io">Nerfies</a>.
           </p>
         </div>
       </div>
