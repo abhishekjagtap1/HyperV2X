@@ -112,7 +112,7 @@
           </div>
 
                               <!-- Venue line: conference in black, Oral in red -->
-          <div class="publication-authors" style="margin-top: 0.8rem; font-size: 1.4rem;">
+          <div class="publication-authors" style="margin-top: 0.8rem; font-size: 2.0rem;">
             <span style="color: #222; font-weight: 900;">
               IEEE IV 2026
             </span>
@@ -121,18 +121,36 @@
             </strong>
 
 
+      <!-- University logos with names -->
+      <div class="affiliation-logos" style="margin-top: 1rem;">
+        
+        <div class="affil-item" style="display: flex; align-items: center; gap: 1.2rem; margin-bottom: 1rem;">
+          <img 
+            src="./static/images/thi.svg" 
+            alt="Technische Hochschule Ingolstadt logo"
+            style="height: 80px; width: auto;"
+          >
+          
+          <span class="affil-label" style="font-size: 1.0rem; font-weight: 600;">
+            <span class="affil-sup" style="font-size: 1rem; vertical-align: super;">1</span>
+            Technische Hochschule Ingolstadt
+          </span>
+        </div>
 
-          <!-- University logos with names -->
-          <div class="affiliation-logos">
-            <div class="affil-item">
-              <img src="./static/images/thi.svg" alt="Technische Hochschule Ingolstadt logo">
-              <span class="affil-label"><span class="affil-sup">1</span>Technische Hochschule Ingolstadt</span>
-            </div>
-            <div class="affil-item">
-              <img src="./static/images/Aschaffenburg_Logo.svg" alt="University of Applied Sciences Aschaffenburg logo">
-              <span class="affil-label"><span class="affil-sup">2</span>University of Applied Sciences Aschaffenburg</span>
-            </div>
-          </div>
+        <div class="affil-item" style="display: flex; align-items: center; gap: 0.8rem;">
+          <img 
+            src="./static/images/Aschaffenburg_Logo.svg" 
+            alt="University of Applied Sciences Aschaffenburg logo"
+            style="height: 80px; width: auto;"
+          >
+          
+          <span class="affil-label" style="font-size: 1.0rem; font-weight: 600;">
+            <span class="affil-sup" style="font-size: 1rem; vertical-align: super;">2</span>
+            University of Applied Sciences Aschaffenburg
+          </span>
+        </div>
+
+      </div>
 
 
 
@@ -178,7 +196,7 @@
       <h2 class="subtitle has-text-centered">
         <span style="font-weight:600;">Hyper-V2X</span> conditions a Bayesian hypernetwork on
         fused multi-agent BEV features to generate stochastic decoder weights, enabling
-        well-calibrated <em>epistemic</em> and <em>aleatoric</em> uncertainty estimation
+        calibrated <em>epistemic</em> and <em>aleatoric</em> uncertainty estimation
         in cooperative Bird's-Eye-View semantic segmentation.
       </h2>
     </div>
@@ -230,7 +248,7 @@
                alt="Qualitative BEV segmentation and uncertainty maps"
                style="width:100%;">
           <p style="font-size:0.9rem; color:#888; margin-top:0.5rem;">
-            Figure 2: Ground truth, predicted BEV segmentation, and corresponding epistemic
+            Ground truth, predicted BEV segmentation, and corresponding epistemic
             and aleatoric uncertainty maps. 
           </p>
         </div>
@@ -253,7 +271,7 @@
                alt="Uncertainty under varying compression rates"
                style="width:100%;">
           <p style="font-size:0.9rem; color:#888; margin-top:0.5rem;">
-            Figure 3: Uncertainty estimation under varying compression rates. As CPR increases (0→64), segmentation quality degrades (red circles).
+            Uncertainty estimation under varying compression rates. As CPR increases (0→64), segmentation quality degrades (red circles).
             Our method produces uncertainty maps that effectively capture this degradation, with progressively higher epistemic and aleatoric uncertainty
             in vulnerable regions, demonstrating reliable uncertainty estimation under communication constraints
           </p>
