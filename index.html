@@ -30,6 +30,41 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+
+  <style>
+    .affiliation-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2.5rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+    .affiliation-logos .affil-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .affiliation-logos img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+    }
+    .affiliation-logos .affil-label {
+      font-size: 0.82rem;
+      color: #555;
+      text-align: center;
+      max-width: 160px;
+      line-height: 1.3;
+    }
+    .affil-sup {
+      font-size: 0.75rem;
+      vertical-align: super;
+      color: #888;
+      margin-right: 2px;
+    }
+  </style>
 </head>
 <body>
 
@@ -76,13 +111,31 @@
             </span>
           </div>
 
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>Technische Hochschule Ingolstadt,</span>
-            <span class="author-block"><sup>2</sup>University of Applied Sciences Aschaffenburg</span>
+                              <!-- Venue line: conference in black, Oral in red -->
+          <div class="publication-authors" style="margin-top: 0.8rem; font-size: 1.4rem;">
+            <span style="color: #222; font-weight: 900;">
+              IEEE Intelligent Vehicles Symposium 2026
+            </span>
+            <strong style="color: #ee1111; margin-left: 0.3rem;">
+              (Oral) 
+            </strong>
+
+
+
+          <!-- University logos with names -->
+          <div class="affiliation-logos">
+            <div class="affil-item">
+              <img src="./static/images/thi.svg" alt="Technische Hochschule Ingolstadt logo">
+              <span class="affil-label"><span class="affil-sup">1</span>Technische Hochschule Ingolstadt</span>
+            </div>
+            <div class="affil-item">
+              <img src="./static/images/Aschaffenburg_Logo.svg" alt="University of Applied Sciences Aschaffenburg logo">
+              <span class="affil-label"><span class="affil-sup">2</span>University of Applied Sciences Aschaffenburg</span>
+            </div>
           </div>
 
-          <div class="is-size-6 publication-authors" style="margin-top: 0.4rem; color: #888;">
-            IEEE Intelligent Vehicles Symposium 2026 &nbsp;|&nbsp; <strong>Oral Presentation</strong>
+
+
           </div>
 
           <div class="column has-text-centered">
@@ -151,30 +204,17 @@
             and V2X context embedding module that conditions a Bayesian hypernetwork on fused
             multi-agent features to generate weight distributions for stochastic Bird's-Eye-View
             (BEV) segmentation. Unlike existing deterministic BEV models, Hyper-V2X enables
-            efficient uncertainty estimation with little computation overhead. Our approach is architecture-agnostic, and can be seamlessly integrated with modern
-            cooperative backbones such as CoBEVT. Experiments on the OPV2V benchmark demonstrate
-            that Hyper-V2X provides accurate, well-calibrated uncertainty estimates and improves
+            efficient uncertainty estimation with little computation overhead. Our approach is
+            architecture-agnostic, and can be seamlessly integrated with modern cooperative
+            backbones such as CoBEVT. Experiments on the OPV2V benchmark demonstrate that
+            Hyper-V2X provides accurate, well-calibrated uncertainty estimates and improves
             overall perception reliability.
           </p>
         </div>
       </div>
     </div>
-
-    <!-- Paper video — replace src with your video if you have one -->
-    <!--
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-    -->
   </div>
 </section>
-
 
 
 <!-- ────────────── Qualitative Results ────────────── -->
@@ -246,9 +286,9 @@
   title     = {Hyper-V2X: Hypernetworks for Estimating Epistemic and Aleatoric Uncertainty
                in Cooperative Bird's-Eye-View Semantic Segmentation},
   booktitle = {IEEE Intelligent Vehicles Symposium (IV)},
-  year      = {2025},
+  year      = {2026},
   note      = {Oral presentation},
-  url       = {https://arxiv.org/abs/2605.21309}
+  url       = {https://arxiv.org/abs/2605.21309v1}
 }</code></pre>
   </div>
 </section>
