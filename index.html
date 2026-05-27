@@ -189,10 +189,12 @@
 </section>
 
 <!-- ────────────── Teaser ────────────── -->
+
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img src="./static/images/Final_pipeline_before_submission.jpg" alt="Hyper-V2X overview" style="width:100%;">
+      <img src="./static/images/final_multi_agent.gif" alt="Hyper-V2X multi-agent visualization" style="width:100%;">
+
       <h2 class="subtitle has-text-centered">
         <span style="font-weight:600;">Hyper-V2X</span> conditions a Bayesian hypernetwork on
         fused multi-agent BEV features to generate stochastic decoder weights, enabling
@@ -204,13 +206,22 @@
 </section>
 
 
-<!-- ────────────── Abstract ────────────── -->
-<section class="section">
+
+
+<!-- ────────────── Abstract (HIGHLIGHTED) ────────────── -->
+<section class="section" style="background-color: #f5f6f7; padding: 3rem 0;">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
+      
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
+        
+        <h2 class="title is-2" style="margin-bottom: 1.5rem;">
+          Abstract
+        </h2>
+
+        <div class="content has-text-justified"
+             style="font-size: 1.15rem; line-height: 1.85; color: #222;">
+          
           <p>
             Cooperative perception enabled by Vehicle-to-Everything (V2X) communication enhances
             autonomous driving safety by creating a unified environmental representation through
@@ -228,11 +239,33 @@
             Hyper-V2X provides accurate, well-calibrated uncertainty estimates and improves
             overall perception reliability.
           </p>
+
         </div>
       </div>
+
     </div>
   </div>
 </section>
+
+
+<section class="hero-body" style="padding-top: 1.5rem; padding-bottom: 2rem;">
+  <div class="container is-max-desktop">
+    
+    <h2 class="title is-3 has-text-centered">Method</h2>
+
+    <section class="hero-body">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="./static/images/Final_pipeline_before_submission.jpg"
+     alt="Hyper-V2X overview"
+     style="width:100%; border-radius: 12px;">
+      <h2 class="subtitle has-text-centered">
+        <span style="font-weight:600;">Hyper-V2X</span> Overview of the proposed Hyper-V2X framework for uncertainty estimation in V2X-based cooperative perception
+      </h2>
+    </div>
+  </div>
+
+
 
 
 <!-- ────────────── Qualitative Results ────────────── -->
@@ -253,7 +286,8 @@
           </p>
         </div>
 
-        <div class="content has-text-justified" style="margin-top: 1.5rem;">
+        <div class="content has-text-justified"
+        style="margin-top: 1.5rem; font-size: 1.08rem; line-height: 1.75;">
           <p>
             High uncertainty is observed at the boundaries of semantic objects in both epistemic
             and aleatoric uncertainty maps. This pattern is particularly evident where geometric
@@ -263,42 +297,41 @@
             under challenging visual conditions.
           </p>
         </div>
+<!-- ────────────── Uncertainty under Communication Constraints (HIGHLIGHTED) ────────────── -->
+<section class="section" style="background-color: #f5f6f7; padding: 3rem 0; margin-top: 2rem;">
 
-        <!-- Compression figure -->
-        <!-- <h3 class="title is-4" style="margin-top:2rem;">Uncertainty under Communication Constraints</h3>
-        <div class="content has-text-centered">
-          <img src="./static/images/compression_full-min.jpg"
-               alt="Uncertainty under varying compression rates"
-               style="width:100%;">
-          <p style="font-size:0.9rem; color:#888; margin-top:0.5rem;"> -->
-        <h3 class="title is-4" style="margin-top:2rem;">Uncertainty under Communication Constraints</h3>
-        <div class="content has-text-centered">
-          <img src="./static/images/output_final_loop_with_bar.gif"
-              alt="Uncertainty under varying compression rates"
-              style="width:100%;">
-          <p style="font-size:0.9rem; color:#888; margin-top:0.5rem;">
-            Uncertainty estimation under varying compression rates. As CPR increases (0→64), segmentation quality degrades (red circles).
-            Our method produces uncertainty maps that effectively capture this degradation, with progressively higher epistemic and aleatoric uncertainty
-            in vulnerable regions, demonstrating reliable uncertainty estimation under communication constraints
-          </p>
-        </div>
+  <div class="container is-max-desktop">
 
-        <div class="content has-text-justified" style="margin-top: 1rem;">
-          <p>
-            As the compression rate (CPR) increases from 0 to 64, we observe progressive degradation in segmentation performance. Specific objects that are accurately detected
-            at compression rate 0 (highlighted in red circles) gradually deteriorate as communication bandwidth is reduced, until they are no longer detected at compression rate 64. 
-            Critically, our uncertainty maps effectively capture this degradation regions (highlighted in white circles) and exhibits progressively higher epistemic and aleatoric uncertainty as compression increases.
+    <h3 class="title is-3 has-text-centered" style="margin-bottom: 1.5rem;">
+      Uncertainty under Communication Constraints
+    </h3>
 
-            Such uncertainty-aware predictions are particularly valuable in
-            cooperative perception systems, where bandwidth limitations
-            and communication losses are inherent challenges, enabling
-            downstream tasks to appropriately weight or discard unreliable
-            predictions.
-          </p>
-        </div>
+    <!-- GIF -->
+<div class="content has-text-centered" style="margin-top: 1rem;">
 
-      </div>
+  <img src="./static/images/output_final_loop_with_bar.gif"
+       alt="Uncertainty under varying compression rates"
+       style="width: 100vw; max-width: 1800px; margin-left: calc(40% - 38vw); border-radius: 12px;">
+
     </div>
+
+    <!-- Explanation -->
+    <div class="content has-text-justified"
+         style="margin-top: 1.5rem; font-size: 1.05rem; line-height: 1.75; color: #222;">
+
+      <p>
+        As the compression rate (CPR) increases from 0 to 64, we observe progressive degradation in segmentation performance. Specific objects that are accurately detected
+        at compression rate 0 (highlighted in GREEN circles) gradually deteriorate as communication bandwidth is reduced, until they are no longer detected at compression rate 64.
+        Critically, our uncertainty maps effectively capture this degradation regions (highlighted in GREEN circles) and exhibits progressively higher epistemic and aleatoric uncertainty as compression increases.
+      </p>
+
+      <p>
+        Such uncertainty-aware predictions are particularly valuable in cooperative perception systems, where bandwidth limitations and communication losses are inherent challenges,
+        enabling downstream tasks to appropriately weight or discard unreliable predictions.
+      </p>
+
+    </div>
+
   </div>
 </section>
 
