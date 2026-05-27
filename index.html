@@ -302,32 +302,33 @@
             under challenging visual conditions.
           </p>
         </div>
-<!-- ────────────── Uncertainty under Communication Constraints (HIGHLIGHTED) ────────────── -->
-<section class="section" style="background-color: #f5f6f7; padding: 3rem 0; margin-top: 2rem;">
+<!-- ────────────── Uncertainty under Communication Constraints ────────────── -->
+<section class="section" style="background-color: #f5f6f7; margin-top: 2rem; padding: 3rem 0;">
 
   <div class="container is-max-desktop">
 
-    <h3 class="title is-3 has-text-centered" style="margin-bottom: 1.5rem;">
+    <h3 class="title is-3 has-text-centered"
+        style="margin-bottom: 1.5rem; font-weight: 700;">
       Uncertainty under Communication Constraints
     </h3>
 
     <!-- GIF -->
-<div class="content has-text-centered" style="margin-top: 1rem;">
+    <div class="content has-text-centered" style="margin-top: 1rem;">
 
-  <img src="./static/images/output_final_loop_with_bar.gif"
-       alt="Uncertainty under varying compression rates"
-       style="width: 100vw; max-width: 1800px; margin-left: calc(40% - 38vw); border-radius: 12px;">
+      <img src="./static/images/output_final_loop_with_bar.gif"
+           alt="Uncertainty under varying compression rates"
+           style="width: 100%; max-width: 1200px; height: auto; display: block; margin: 0 auto; border-radius: 12px;">
 
     </div>
 
     <!-- Explanation -->
     <div class="content has-text-justified"
-         style="margin-top: 1.5rem; font-size: 1.05rem; line-height: 1.75; color: #222;">
+         style="margin-top: 1.5rem;">
 
       <p>
         As the compression rate (CPR) increases from 0 to 64, we observe progressive degradation in segmentation performance. Specific objects that are accurately detected
-        at compression rate 0 (highlighted in GREEN circles) gradually deteriorate as communication bandwidth is reduced, until they are no longer detected at compression rate 64.
-        Critically, our uncertainty maps effectively capture this degradation regions (highlighted in GREEN circles) and exhibits progressively higher epistemic and aleatoric uncertainty as compression increases.
+        at compression rate 0 gradually deteriorate as communication bandwidth is reduced, until they are no longer detected at compression rate 64.
+        Critically, our uncertainty maps effectively capture this degradation and exhibit progressively higher epistemic and aleatoric uncertainty as compression increases.
       </p>
 
       <p>
