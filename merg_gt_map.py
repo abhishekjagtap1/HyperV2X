@@ -7,10 +7,10 @@ import numpy as np
 # PATHS
 # ============================================================
 
-DYNAMIC_DIR = "/home/uchihadj/PhD_Uchiha/1319/sorted_1319_labels/pred"
-MAP_DIR = "/home/uchihadj/PhD_Uchiha/1319/sorted_1319_labels/map"
+DYNAMIC_DIR = "/home/uchihadj/PhD_Uchiha/scene_1460/sorted_1460_labels/pred"
+MAP_DIR = "/home/uchihadj/PhD_Uchiha/scene_1460/static_1460"
 
-OUTPUT_DIR = "/home/uchihadj/PhD_Uchiha/1319/sorted_1319_labels/merged_pred"
+OUTPUT_DIR = "/home/uchihadj/PhD_Uchiha/scene_1460/sorted_1460_labels/merged_pred"
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 

@@ -9,17 +9,29 @@ import imageio  # ✅ ADDED FOR GIF
 # CONFIG
 # ============================================================
 
-CAM_DIR = "/home/uchihadj/PhD_Uchiha/1319/all/folder"
+# CAM_DIR = "/home/uchihadj/PhD_Uchiha/scene_741/scene_741"
 
-GT_DIR   = "/home/uchihadj/PhD_Uchiha/1319/sorted_1319_labels/merged_gt"
-PRED_DIR = "/home/uchihadj/PhD_Uchiha/1319/sorted_1319_labels/merged_pred"
-UNC_DIR  = "/home/uchihadj/PhD_Uchiha/1319/sorted_1319_labels/merged_pred_unc_total"
+# GT_DIR   = "/home/uchihadj/PhD_Uchiha/scene_741/sorted_741_labels/merged_gt"
+# PRED_DIR = "/home/uchihadj/PhD_Uchiha/scene_741/sorted_741_labels/merged_pred"
+# UNC_DIR  = "/home/uchihadj/PhD_Uchiha/scene_741/sorted_741_labels/merged_pred_unc_total"
 
-OUTPUT_VIDEO = "/home/uchihadj/PhD_Uchiha/1319/final_multi_agent.mp4"
-OUTPUT_GIF   = "/home/uchihadj/PhD_Uchiha/1319/final_multi_agent.gif"  # ✅ ADDED
+# OUTPUT_VIDEO = "/home/uchihadj/PhD_Uchiha/scene_741/final_multi_agent_scne741.mp4"
+# OUTPUT_GIF   = "/home/uchihadj/PhD_Uchiha/scene_741/final_multi_agent_scene_741.gif"  # ✅ ADDED
 
-AGENT1 = "160"
-AGENT2 = "169"
+# AGENT1 = "886"
+# AGENT2 = "895"
+
+CAM_DIR = "/home/uchihadj/PhD_Uchiha/scene_1460/scene_1460"
+
+GT_DIR   = "/home/uchihadj/PhD_Uchiha/scene_1460/sorted_1460_labels/merged_gt"
+PRED_DIR = "/home/uchihadj/PhD_Uchiha/scene_1460/sorted_1460_labels/merged_pred"
+UNC_DIR  = "/home/uchihadj/PhD_Uchiha/scene_1460/sorted_1460_labels/merged_pred_unc_total"
+
+OUTPUT_VIDEO = "/home/uchihadj/PhD_Uchiha/scene_1460final_multi_agent_scne1460.mp4"
+OUTPUT_GIF   = "/home/uchihadj/PhD_Uchiha/scene_1460/final_multi_agent_scene1460.gif"  # ✅ ADDED
+
+AGENT1 = "225"
+AGENT2 = "234"
 
 FPS = 10
 
@@ -27,8 +39,8 @@ FPS = 10
 # LOAD CAMERA FRAMES (two agents)
 # ============================================================
 
-pattern1 = re.compile(r"(\d+)_agent160_cam([0-3])\.png")
-pattern2 = re.compile(r"(\d+)_agent169_cam([0-3])\.png")
+pattern1 = re.compile(r"(\d+)_agent225_cam([0-3])\.png")
+pattern2 = re.compile(r"(\d+)_agent234_cam([0-3])\.png")
 
 cam_a = {}
 cam_b = {}
@@ -143,8 +155,8 @@ for fid in frame_ids:
     # ========================================================
 
     for i in range(4):
-        cams_a[i] = label(cams_a[i], f"Agent160 Cam{i}")
-        cams_b[i] = label(cams_b[i], f"Agent169 Cam{i}")
+        cams_a[i] = label(cams_a[i], f"Agent225 Cam{i}")
+        cams_b[i] = label(cams_b[i], f"Agent234 Cam{i}")
 
     gt   = label(gt, "GT")
     pred = label(pred, "PRED")

@@ -6,8 +6,8 @@ import shutil
 # CONFIG
 # ============================================================
 
-INPUT_DIR = "/home/uchihadj/PhD_Uchiha/1319/all/folder"
-out = "/home/uchihadj/PhD_Uchiha/1319/sorted_1319_labels"
+INPUT_DIR = "/home/uchihadj/PhD_Uchiha/scene_1460/scene_1460"
+out = "/home/uchihadj/PhD_Uchiha/scene_1460/sorted_1460_labels"
 OUTPUT_GT_DIR = os.path.join(out, "gt")
 OUTPUT_PRED_DIR = os.path.join(out, "pred")
 OUTPUT_UNC_DIR = os.path.join(out, "unc_total")

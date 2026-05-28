@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Hyper-V2X: Hypernetworks for Estimating Epistemic and Aleatoric Uncertainty in Cooperative Bird's-Eye-View Semantic Segmentation.">
+  <meta name="keywords" content="Hyper-V2X, Uncertainty Estimation, Cooperative Perception, BEV Segmentation, Hypernetworks, V2X, Autonomous Driving">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hyper-V2X</title>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <style>
+    .affiliation-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2.5rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+    .affiliation-logos .affil-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .affiliation-logos img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+    }
+    .affiliation-logos .affil-label {
+      font-size: 0.82rem;
+      color: #555;
+      text-align: center;
+      max-width: 160px;
+      line-height: 1.3;
+    }
+    .affil-sup {
+      font-size: 0.75rem;
+      vertical-align: super;
+      color: #888;
+      margin-right: 2px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ────────────── Navbar ────────────── -->
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://abhishekjagtap1.github.io">
+        <span class="icon"><i class="fas fa-home"></i></span>
+      </a>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">More Research</a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://github.com/abhishekjagtap1/Hyper-V2X">Hyper-V2X</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ────────────── Hero / Title ────────────── -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+
+          <h1 class="title is-1 publication-title">Hyper-V2X: Hypernetworks for Estimating Epistemic and Aleatoric Uncertainty in Cooperative Bird's-Eye-View Semantic Segmentation</h1>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://abhishekjagtap1.github.io">Abhishek Dinkar Jagtap</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="#">Sanath Tiptur Sadashivaiah</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="#">Andreas Festag</a><sup>1</sup>
+            </span>
+          </div>
+
+                              <!-- Venue line: conference in black, Oral in red -->
+          <div class="publication-authors" style="margin-top: 0.8rem; font-size: 2.0rem;">
+            <span style="color: #222; font-weight: 900;">
+              IEEE IV 2026
+            </span>
+            <strong style="color: #ee1111; margin-left: 0.3rem;">
+              (Oral) 
+            </strong>
+
+
+      <!-- University logos with names -->
+      <div class="affiliation-logos" style="margin-top: 1rem;">
+        
+        <div class="affil-item" style="display: flex; align-items: center; gap: 1.2rem; margin-bottom: 1rem;">
+          <img 
+            src="./static/images/thi.svg" 
+            alt="Technische Hochschule Ingolstadt logo"
+            style="height: 80px; width: auto;"
+          >
+          
+          <span class="affil-label" style="font-size: 1.0rem; font-weight: 600;">
+            <span class="affil-sup" style="font-size: 1rem; vertical-align: super;">1</span>
+            Technische Hochschule Ingolstadt
+          </span>
+        </div>
+
+        <div class="affil-item" style="display: flex; align-items: center; gap: 0.8rem;">
+          <img 
+            src="./static/images/Aschaffenburg_Logo.svg" 
+            alt="University of Applied Sciences Aschaffenburg logo"
+            style="height: 80px; width: auto;"
+          >
+          
+          <span class="affil-label" style="font-size: 1.0rem; font-weight: 600;">
+            <span class="affil-sup" style="font-size: 1rem; vertical-align: super;">2</span>
+            University of Applied Sciences Aschaffenburg
+          </span>
+        </div>
+
+      </div>
+
+
+
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2605.21309v1"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2605.21309v1"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="ai ai-arxiv"></i></span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/abhishekjagtap1/Hyper-V2X"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span>Code</span>
+                </a>
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ────────────── Teaser ────────────── -->
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+
+      <video autoplay muted loop playsinline
+             style="width:100%; max-width: 1100px; display:block; margin: 0 auto; border-radius: 12px;">
+        <source src="./static/images/final_multi_agent_ffmpeg.mp4" type="video/mp4">
+      </video>
+
+      <h2 class="subtitle has-text-centered">
+        <span style="font-weight:600;">Hyper-V2X</span> conditions a Bayesian hypernetwork on
+        fused multi-agent BEV features to generate stochastic decoder weights, enabling
+        calibrated <em>epistemic</em> and <em>aleatoric</em> uncertainty estimation
+        in cooperative Bird's-Eye-View semantic segmentation.
+      </h2>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- ────────────── Abstract (HIGHLIGHTED) ────────────── -->
+<section class="section" style="background-color: #f5f6f7; padding: 2rem 0;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      
+      <div class="column is-four-fifths">
+        
+        <h2 class="title is-2" style="margin-bottom: 1.0rem;">
+          Abstract
+        </h2>
+
+        <div class="content has-text-justified"
+             style="font-size: 1rem; line-height: 1.85; color: #222;">
+          
+          <p>
+            Cooperative perception enabled by Vehicle-to-Everything (V2X) communication enhances
+            autonomous driving safety by creating a unified environmental representation through
+            shared sensory data. While recent works have advanced multi-agent fusion for improved
+            perception, uncertainty quantification in such cooperative frameworks remains largely
+            unexplored. This paper introduces <span style="font-weight:600;">Hyper-V2X</span>, a
+            hypernetwork-based framework for estimating both epistemic and aleatoric uncertainties
+            in V2X-based perception. Specifically, we propose a partial weight generation scheme
+            and V2X context embedding module that conditions a Bayesian hypernetwork on fused
+            multi-agent features to generate weight distributions for stochastic Bird's-Eye-View
+            (BEV) segmentation. Unlike existing deterministic BEV models, Hyper-V2X enables
+            efficient uncertainty estimation with little computation overhead. Our approach is
+            architecture-agnostic, and can be seamlessly integrated with modern cooperative
+            backbones such as CoBEVT. Experiments on the OPV2V benchmark demonstrate that
+            Hyper-V2X provides accurate, well-calibrated uncertainty estimates and improves
+            overall perception reliability.
+          </p>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="hero-body" style="padding-top: 1.5rem; padding-bottom: 2rem;">
+  <div class="container is-max-desktop">
+    
+    <h2 class="title is-3 has-text-centered">Method</h2>
+
+    <section class="hero-body">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="./static/images/Final_pipeline_before_submission.jpg"
+     alt="Hyper-V2X overview"
+     style="width:100%; border-radius: 12px;">
+      <h2 class="subtitle has-text-centered">
+        <span style="font-weight:600;">Hyper-V2X</span> Overview of the proposed Hyper-V2X framework for uncertainty estimation in V2X-based cooperative perception
+      </h2>
+    </div>
+  </div>
+
+
+
+
+<!-- ────────────── Qualitative Results ────────────── -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Results</h2>
+
+        <!-- Qualitative figure -->
+        <div class="content has-text-centered">
+          <img src="./static/images/UQ_fig2-min_compressed (1).jpg"
+               alt="Qualitative BEV segmentation and uncertainty maps"
+               style="width:100%;">
+          <p style="font-size:0.9rem; color:#888; margin-top:0.5rem;">
+            Ground truth, predicted BEV segmentation, and corresponding epistemic
+            and aleatoric uncertainty maps. 
+          </p>
+        </div>
+
+        <div class="content has-text-justified"
+        style="margin-top: 1.5rem; font-size: 1.08rem; line-height: 1.75;">
+          <p>
+            High uncertainty is observed at the boundaries of semantic objects in both epistemic
+            and aleatoric uncertainty maps. This pattern is particularly evident where geometric
+            irregularities occur — for instance, when predicted vehicle boundaries deviate from
+            the ground truth. Regions with incomplete or occluded observations consistently
+            exhibit elevated uncertainty, reflecting the model's awareness of perceptual ambiguity
+            under challenging visual conditions.
+          </p>
+        </div>
+<!-- ────────────── Uncertainty under Communication Constraints ────────────── -->
+<section class="section" style="background-color: #f5f6f7; margin-top: 2rem; padding: 3rem 0;">
+
+  <div class="container is-max-desktop">
+
+    <h3 class="title is-3 has-text-centered"
+        style="margin-bottom: 1.5rem; font-weight: 700;">
+      Uncertainty under Communication Constraints
+    </h3>
+
+    <!-- GIF -->
+    <div class="content has-text-centered" style="margin-top: 1rem;">
+
+      <img src="./static/images/output_final_loop_with_bar.gif"
+           alt="Uncertainty under varying compression rates"
+           style="width: 100%; max-width: 1200px; height: auto; display: block; margin: 0 auto; border-radius: 12px;">
+
+    </div>
+
+    <!-- Explanation -->
+    <div class="content has-text-justified"
+         style="margin-top: 1.5rem;">
+
+      <p>
+        As the compression rate (CPR) increases from 0 to 64, we observe progressive degradation in segmentation performance. Specific objects that are accurately detected
+        at compression rate 0 gradually deteriorate as communication bandwidth is reduced, until they are no longer detected at compression rate 64.
+        Critically, our uncertainty maps effectively capture this degradation and exhibit progressively higher epistemic and aleatoric uncertainty as compression increases.
+      </p>
+
+      <p>
+        Such uncertainty-aware predictions are particularly valuable in cooperative perception systems, where bandwidth limitations and communication losses are inherent challenges,
+        enabling downstream tasks to appropriately weight or discard unreliable predictions.
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ────────────── BibTeX ────────────── -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{jagtap2025hyperv2x,
+  author    = {Jagtap, Abhishek Dinkar and Tiptur Sadashivaiah, Sanath and Festag, Andreas},
+  title     = {Hyper-V2X: Hypernetworks for Estimating Epistemic and Aleatoric Uncertainty
+               in Cooperative Bird's-Eye-View Semantic Segmentation},
+  archivePrefix = {Accepted to IEEE Intelligent Vehicles Symposium (IV)},
+  year      = {2026},
+  note      = {Oral presentation},
+  url       = {https://arxiv.org/abs/2605.21309v1}
+  DOI       = {TODO}
+}</code></pre>
+  </div>
+</section>
+
+
+<!-- ────────────── Footer ────────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link" href="https://arxiv.org/pdf/2605.21309">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/abhishekjagtap1/Hyper-V2X">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            Website template is borrowed from <a href="https://nerfies.github.io">Nerfies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

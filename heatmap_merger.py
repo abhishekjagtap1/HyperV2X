@@ -6,10 +6,10 @@ from PIL import Image
 # PATHS
 # ============================================================
 
-HEATMAP_DIR = "/home/uchihadj/PhD_Uchiha/1319/sorted_1319_labels/unc_total"
-MAP_DIR = "/home/uchihadj/PhD_Uchiha/1319/sorted_1319_labels/map"
+HEATMAP_DIR = "/home/uchihadj/PhD_Uchiha/scene_1460/sorted_1460_labels/unc_total"
+MAP_DIR = "/home/uchihadj/PhD_Uchiha/scene_1460/static_1460"
 
-OUTPUT_DIR = "/home/uchihadj/PhD_Uchiha/1319/sorted_1319_labels/merged_pred_unc_total"
+OUTPUT_DIR = "/home/uchihadj/PhD_Uchiha/scene_1460/sorted_1460_labels/merged_pred_unc_total"
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
@@ -54,7 +54,7 @@ for heatmap_path in heatmap_files:
     # Blend (your desired logic)
     # --------------------------------------------------------
 
-    merged = Image.blend(map_img, heatmap_img, alpha=0.7)
+    merged = Image.blend(map_img, heatmap_img, alpha=0.8)
 
     # --------------------------------------------------------
     # Save output
