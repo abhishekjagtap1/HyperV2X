@@ -592,9 +592,78 @@
   <div class="container">
     <h2 class="section-title reveal" style="text-align:center;">Results</h2>
 
-    <div class="figure-wrap reveal d1" data-lightbox>
-      <img src="./static/images/UQ_fig2-min_compressed (1).jpg" alt="BEV segmentation and uncertainty maps">
+    <!-- Magnifier styles -->
+    <style>
+      .magnifier-wrap {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        cursor: none;
+        overflow: hidden;
+        border-radius: 8px;
+      }
+      .magnifier-wrap img {
+        width: 100%;
+        display: block;
+        border-radius: 8px;
+      }
+      .magnifier-lens {
+        position: absolute;
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        border: 3px solid rgba(255,255,255,0.85);
+        box-shadow: 0 4px 24px rgba(0,0,0,0.35);
+        pointer-events: none;
+        display: none;
+        background-repeat: no-repeat;
+        z-index: 10;
+      }
+    </style>
+
+    <div class="figure-wrap reveal d1" style="text-align:center;">
+      <div class="magnifier-wrap" id="resultsMagnifierWrap">
+        <img src="./static/images/UQ_fig2-min_compressed.jpg"
+             alt="BEV segmentation and uncertainty maps"
+             id="resultsMagnifierImg"
+             draggable="false">
+        <div class="magnifier-lens" id="resultsMagnifierLens"></div>
+      </div>
     </div>
+
+    <!-- Magnifier script -->
+    <script>
+      (function() {
+        const wrap = document.getElementById('resultsMagnifierWrap');
+        const lens = document.getElementById('resultsMagnifierLens');
+        const ZOOM = 3.2;
+        const LENS_SIZE = 160;
+
+        lens.style.backgroundImage = "url('./static/images/UQ_fig2-min_compressed.jpg')";
+
+        function moveLens(e) {
+          const rect = wrap.getBoundingClientRect();
+          const x = (e.clientX ?? e.touches[0].clientX) - rect.left;
+          const y = (e.clientY ?? e.touches[0].clientY) - rect.top;
+
+          lens.style.left = (x - LENS_SIZE / 2) + 'px';
+          lens.style.top  = (y - LENS_SIZE / 2) + 'px';
+
+          const bgX = -(x * ZOOM - LENS_SIZE / 2);
+          const bgY = -(y * ZOOM - LENS_SIZE / 2);
+          const bgW = wrap.offsetWidth  * ZOOM;
+          const bgH = wrap.offsetHeight * ZOOM;
+
+          lens.style.backgroundSize     = bgW + 'px ' + bgH + 'px';
+          lens.style.backgroundPosition = bgX + 'px ' + bgY + 'px';
+        }
+
+        wrap.addEventListener('mouseenter', () => { lens.style.display = 'block'; });
+        wrap.addEventListener('mouseleave', () => { lens.style.display = 'none';  });
+        wrap.addEventListener('mousemove',  moveLens);
+      })();
+    </script>
+
     <p class="fig-caption reveal d2">
       Ground truth, predicted BEV segmentation, and corresponding epistemic and aleatoric uncertainty maps.
     </p>
@@ -635,9 +704,80 @@
   <div class="container">
     <h2 class="section-title reveal" style="text-align:center;">Uncertainty under Communication Constraints</h2>
 
-    <div class="figure-wrap reveal d1" style="cursor:default;">
-      <img src="./static/images/output_final_loop_with_bar.gif" alt="Uncertainty under varying compression rates">
+    <!-- Magnifier styles -->
+    <style>
+      .magnifier-wrap {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        cursor: none;
+        overflow: hidden;
+        border-radius: 8px;
+      }
+      .magnifier-wrap img {
+        width: 100%;
+        display: block;
+        border-radius: 8px;
+      }
+      .magnifier-lens {
+        position: absolute;
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        border: 3px solid rgba(255,255,255,0.85);
+        box-shadow: 0 4px 24px rgba(0,0,0,0.35);
+        pointer-events: none;
+        display: none;
+        background-repeat: no-repeat;
+        background-image: url('./static/images/full_compression.png');
+        z-index: 10;
+        transition: opacity 0.15s ease;
+      }
+    </style>
+
+    <div class="figure-wrap reveal d1" style="cursor:default; text-align:center;">
+      <div class="magnifier-wrap" id="magnifierWrap">
+        <img src="./static/images/full_compression.png"
+             alt="Full compression comparison"
+             id="magnifierImg"
+             draggable="false">
+        <div class="magnifier-lens" id="magnifierLens"></div>
+      </div>
     </div>
+
+    <!-- Magnifier script -->
+    <script>
+      (function() {
+        const wrap = document.getElementById('magnifierWrap');
+        const lens = document.getElementById('magnifierLens');
+        const img  = document.getElementById('magnifierImg');
+        const ZOOM = 2.4;
+        const LENS_SIZE = 160;
+
+        function moveLens(e) {
+          const rect = wrap.getBoundingClientRect();
+          const x = (e.clientX ?? e.touches[0].clientX) - rect.left;
+          const y = (e.clientY ?? e.touches[0].clientY) - rect.top;
+
+          const lx = x - LENS_SIZE / 2;
+          const ly = y - LENS_SIZE / 2;
+          lens.style.left = lx + 'px';
+          lens.style.top  = ly + 'px';
+
+          const bgX = -(x * ZOOM - LENS_SIZE / 2);
+          const bgY = -(y * ZOOM - LENS_SIZE / 2);
+          const bgW = wrap.offsetWidth  * ZOOM;
+          const bgH = wrap.offsetHeight * ZOOM;
+
+          lens.style.backgroundSize     = bgW + 'px ' + bgH + 'px';
+          lens.style.backgroundPosition = bgX + 'px ' + bgY + 'px';
+        }
+
+        wrap.addEventListener('mouseenter', () => { lens.style.display = 'block'; });
+        wrap.addEventListener('mouseleave', () => { lens.style.display = 'none';  });
+        wrap.addEventListener('mousemove',  moveLens);
+      })();
+    </script>
 
     <div class="results-text reveal d1">
       As the compression rate (CPR) increases from 0 to 64, we observe progressive degradation
